@@ -1,5 +1,5 @@
 class DnD {
-  /* eslint-disable */
+
   position = {
     top: 'auto',
     left: 'auto'
@@ -9,7 +9,7 @@ class DnD {
     x: 0,
     y: 0
   }
-  /* eslint-enable */
+
 
   constructor (element) {
     this.element = element
@@ -18,16 +18,15 @@ class DnD {
   }
 
   init () {
+    this.handleMouseDown = this.handleMouseDown.bind(this)
     this.handleMouseMove = this.handleMouseMove.bind(this)
+    this.handleMouseUp = this.handleMouseUp.bind(this)
 
     this.element.addEventListener('mousedown', this.handleMouseDown.bind(this))
     document.addEventListener('mouseup', this.handleMouseUp.bind(this))
   }
 
-  handleMouseDown ({ clientX, clientY }) { // { clientX, clientY } = event
-    // const clientX = event.clientX
-    // const clientY = event.clientY
-    // const { clientX, clientY } = event
+  handleMouseDown ({ clientX, clientY }) {
     console.log('mousedown')
 
     document.addEventListener('mousemove', this.handleMouseMove)
@@ -45,6 +44,7 @@ class DnD {
     console.log('mouseup')
 
     document.removeEventListener('mousemove', this.handleMouseMove)
+    document.removeEventListener('mouseup', this.handleMouseup)
     this.setPosition(clientX, clientY)
   }
 

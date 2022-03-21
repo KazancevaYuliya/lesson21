@@ -1,8 +1,11 @@
 import './scss/app.scss'
 
-import { DnD } from './js/dnd'
 import { Card } from './js/card'
 
 console.log('Hello')
+const containerElement = document.querySelector('#container')
+const buttonElement = document.querySelector('#button')
 
-new Card()
+buttonElement.addEventListener('click', () => {
+  new Card (containerElement)
+})

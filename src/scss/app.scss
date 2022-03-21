@@ -1,6 +1,8 @@
-@import './title';
+h1 {
+  color: red;
+  font-size: 5rem;
+}
 
-
-body {
-  background: url('../../assets/images/cat@720x405.jpeg');
+p {
+  font-size: 2rem;
 }

@@ -4,39 +4,47 @@ class Card {
   data = []
   activeStick = null
 
-  constructor () {
+  constructor() {
     this.buttonElement = document.querySelector('#button')
     this.containerElement = document.querySelector('#container')
+    this.cardElement = document.querySelector('#card')
 
     this.init()
   }
 
-  init () {
+  init() {
     this.buttonElement.addEventListener('click', this.handleClickButton.bind(this))
-  }
+    this.cardElement.addEventListener('click', this.handleClickCard.bind(this))
 
-  handleClickButton () {
-    const card = {
-      id: Date.now(),
-      content: 'Hello',
-      position: {
-        top: 'auto',
-        left: 'auto'
-      }
+  }
+}
+
+handleClickButton() {
+  const card = {
+    id: Date.now(),
+    content: 'Hello',
+    position: {
+      top: 'auto',
+      left: 'auto'
     }
-
-    this.data.push(card)
-    this.render()
   }
 
-  buildCardElement (data) {
-    const cardWrapperElement = document.createElement('div')
-    cardWrapperElement.classList.add('card')
-    cardWrapperElement.setAttribute('data-id', data.id)
-    cardWrapperElement.style.top = data.position.top
-    cardWrapperElement.style.left = data.position.left
+  this.data.push(card)
+  this.render()
+}
 
-    const templateInnerCard = `
+buildCardElement(data) {
+  const cardWrapperElement = document.createElement('div')
+  cardWrapperElement.classList.add('card')
+  cardWrapperElement.setAttribute('data-id', data.id)
+  cardWrapperElement.style.top = data.position.top
+  cardWrapperElement.style.left = data.position.left
+
+}
+
+const templateInnerCard = `
+
+
       <div class="card__content">${data.content}</div>
       <form class="card__form">
         <textarea>${data.content}</textarea>
@@ -46,18 +54,18 @@ class Card {
     cardWrapperElement.innerHTML = templateInnerCard
     new DnD(cardWrapperElement)
 
-    return cardWrapperElement // html element!!!
+    return cardWrapperElement
   }
 
-  render () {
+  render() {
     this.containerElement.innerHTML = ''
+
 
     this.data.forEach((data) => {
       const cardElement = this.buildCardElement(data)
 
-      this.containerElement.append(cardElement)
+      this.containerElement.append(this.cardElement)
     })
   }
-}
 
 export { Card }
