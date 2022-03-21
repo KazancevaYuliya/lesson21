@@ -3,9 +3,41 @@
   <head>
     <meta charset="utf-8" />
     <title>Getting Started</title>
+
+    <style>
+      .block {
+        box-sizing: border-box;
+
+        width: 450px;
+        height: 300px;
+        padding: 24px;
+        border: 24px solid rgb(216, 110, 110);
+        overflow: auto;
+      }
+
+      .content {
+        background-color: aquamarine;
+      }
+
+      .card {
+        position: absolute;
+
+        width: 150px;
+        height: 240px;
+        background-color: yellow;
+      }
+    </style>
   </head>
   <body>
-    <h1 class="title">Template webpack</h1>
+
+    <button id="button">New Card</button>
+
+
+    <!-- <div class="card"></div> -->
+
+    <div id="container">
+      <!-- Cards -->
+    </div>
 
     <script src="./dist/bundle.js"></script>
   </body>
