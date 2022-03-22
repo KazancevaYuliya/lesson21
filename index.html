@@ -1,48 +1,46 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Getting Started</title>
 
-    <style>
-      .block {
-        box-sizing: border-box;
+<head>
+  <meta charset="utf-8" />
+  <title>Getting Started</title>
 
-        width: 450px;
-        height: 300px;
-        padding: 24px;
-        border: 24px solid rgb(216, 110, 110);
-        overflow: auto;
-      }
+  <style>
+    .block {
+      box-sizing: border-box;
 
-      .content {
-        background-color: aquamarine;
-      }
+      width: 450px;
+      height: 300px;
+      padding: 24px;
+      border: 24px solid rgb(216, 110, 110);
+      overflow: auto;
+    }
 
-      .card {
-        position: absolute;
+    .content {
+      background-color: aquamarine;
+    }
+  </style>
+</head>
 
-        width: 150px;
-        height: 240px;
-        background-color: yellow;
-      }
-    </style>
-  </head>
-  <body>
-
-    <button id="button">New Card</button>
+<body>
 
 
-    <div class="card" id="card">
-      <div class="card__item" id="cardItem">
+  <button id="button">New Card</button>
 
-      </div>
-    </div>
+  <fieldset id="inputColor">
+    <label style="color: rgb(231, 230, 157)">Yellow</label>
+    <input type="radio" value="rgb(195, 157, 231)" name="color">
+    <label style="color: rgb(192, 235, 201)">Green</label>
+    <input type="radio" value="rgb(192, 235, 198)" name="color">
+    <label style="color: rgb(216, 178, 96)">Orange</label>
+    <input type="radio" value="rgb(235, 217, 178)" name="color">
+  </fieldset>
 
-    <div class="container" id="container">
+  <div id="container">
 
-    </div>
+  </div>
 
-    <script src="./dist/bundle.js"></script>
-  </body>
+  <script src="./dist/bundle.js"></script>
+</body>
+
 </html>
